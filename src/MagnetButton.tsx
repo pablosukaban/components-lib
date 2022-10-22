@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
-import cssStyles from './MagnetButton.module.css';
+import cssStyles from './styles/MagnetButton.module.css';
 
 type styleType = {
     transform: string;
     transition?: string;
 };
 
-export const MagnetButton = () => {
+export const MagnetButton = React.memo(() => {
     const buttonRef = useRef<HTMLDivElement>(null);
     const [styles, setStyles] = useState<styleType[]>([]);
 
@@ -31,7 +31,7 @@ export const MagnetButton = () => {
         setStyles([
             {
                 transform: `none`,
-                transition: 'all 0.05s ease-in-out',
+                transition: 'all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1)',
             },
             {
                 transform: `none`,
@@ -71,4 +71,5 @@ export const MagnetButton = () => {
             <div className={cssStyles['hover-color']}></div>
         </div>
     );
-};
+});
+MagnetButton.displayName = 'MagnetButton';
