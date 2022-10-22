@@ -1,0 +1,45 @@
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #1b1b1b;
+    border-radius: 50%;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:hover {
+    text-decoration: none;
+    transition: none;
+}
+
+.text-block {
+    position: relative;
+    z-index: 5;
+    font-size: 18px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.hover-color {
+    position: absolute;
+    height: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 1;
+    background-color: #6347ff;
+    border-radius: 100%;
+
+    transition: height 0.2s ease-in;
+}
+
+.button:hover > .hover-color {
+    /*   animation: 0.5s ease-in running hoverAnimate infinite; */
+    height: 100%;
+}
